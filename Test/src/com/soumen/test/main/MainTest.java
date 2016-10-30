@@ -13,15 +13,14 @@ import com.soumen.student.personal.StudentPersonal;
 public class MainTest {
 
 	public static void main(String[] args) {
-
-		StudentPersonal studentPersonal = new StudentPersonal();
+		final StudentPersonal studentPersonal = new StudentPersonal();
 		studentPersonal.setFirstName("soumen");
 		studentPersonal.setLastName("karak");
-		studentPersonal.setPhoneNumber("8123498216");
+		studentPersonal.setPhoneNumber("8123498219");
 		studentPersonal.setGender("M");
 		studentPersonal.setDateOfBirth(new Date());
 
-		StudentAddress studentAddress = new StudentAddress();
+		final StudentAddress studentAddress = new StudentAddress();
 		studentAddress.setAddressType("permanent");
 		studentAddress.setDistrict("medinipur");
 		studentAddress.setPinNumber("721253");
@@ -33,14 +32,15 @@ public class MainTest {
 
 		// studentPersonal.setStudentAddress(studentAddress);
 
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-		Session s = sf.openSession();
-		Transaction t = s.beginTransaction();
+		final SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		final Session s = sf.openSession();
+		final Transaction t = s.beginTransaction();
 		s.save(studentPersonal);
 		s.save(studentAddress);
 		t.commit();
 		s.close();
 		sf.close();
+		System.out.println("soumen");
 	}
 
 }
