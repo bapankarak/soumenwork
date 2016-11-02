@@ -7,6 +7,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import com.soumen.area.address.AddressType;
+import com.soumen.area.address.District;
+import com.soumen.area.address.PoliceStation;
+import com.soumen.area.address.PostOffice;
+import com.soumen.area.address.Village;
 import com.soumen.student.personal.StudentAddress;
 import com.soumen.student.personal.StudentPersonal;
 
@@ -20,13 +25,23 @@ public class MainTest {
 		studentPersonal.setGender("M");
 		studentPersonal.setDateOfBirth(new Date());
 
+		final Village village = new Village();
+				village.setName("kiamacha");
+		final PostOffice postOffice = new PostOffice();
+		postOffice.setName("kiamacha");
+		final PoliceStation policeStation = new PoliceStation();
+		policeStation.setName("golatore");
+		final District district = new District();
+		district.setName("medinipur");
+		final AddressType addressType = null;
+
 		final StudentAddress studentAddress = new StudentAddress();
-		studentAddress.setAddressType("permanent");
-		studentAddress.setDistrict("medinipur");
+		studentAddress.setAddressType(addressType);
+		studentAddress.setDistrict(district);
 		studentAddress.setPinNumber("721253");
-		studentAddress.setPoliceStation("goaltore");
-		studentAddress.setPostOffice("kiamacha");
-		studentAddress.setVillage("kiamacha");
+		studentAddress.setPoliceStation(policeStation);
+		studentAddress.setPostOffice(postOffice);
+		studentAddress.setVillage(village);
 
 		studentAddress.setStudentPersonal(studentPersonal);
 

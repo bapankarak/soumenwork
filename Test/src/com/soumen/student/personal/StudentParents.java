@@ -15,14 +15,14 @@ public class StudentParents {
 	}
 	@Id
 	@GeneratedValue
-	@Column(name = "ID")	
+	@Column(name = "ID")
 	private int id;
-	
+
 	private String fatherName;
 	private String motherName;
 	private String grandFatherName;
 	private String grandMotherName;
-	
+
 	@Column(unique = true)
 	private String fatherPhoneNumber;
 	@Column(unique = true)
@@ -37,6 +37,7 @@ public class StudentParents {
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getFatherName() {
 		return fatherName;
 	}
@@ -97,7 +98,7 @@ public class StudentParents {
 	public void setMotherMonthlyIncome(String motherMonthlyIncome) {
 		this.motherMonthlyIncome = motherMonthlyIncome;
 	}
-	
-	
+
+
 
 }
